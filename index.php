@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "koneksi/login/ceksession.php";
+include "koneksi/ceksession.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
