@@ -1,146 +1,66 @@
-<?php
-session_start();
-include "koneksi/ceksession.php";
-?>
 <!DOCTYPE html>
+<?php
+	session_start();
+	include "ceksessionn.php";
+?>
 <html lang="en">
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>E-Register Ortala</title>
-    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
-    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
-    
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
-    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="shortcut icon" href="img/icon.ico">
 
+    <!-- Bootstrap -->
+    <link href="../../assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../../assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../../assets/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="../../assets/vendors/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../../assets/build/css/custom.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../../img/icon.ico">
   </head>
-  <body>
 
-    <div class="loader"></div>
-    <div id="myDiv">
-    <!--HEADER-->
-    <div class="header">
-      <div class="bg-color">
-        <header id="main-header">
-        <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">E-REGISTER <span class="logo-dec">ORTALA</span></a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#main-header">Beranda</a></li>
-                <li class=""><a href="#feature">Tentang</a></li>
-                <ul class="nav navbar-nav navbar-right">
-                <li class="">
-                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="" alt="">Masuk
-                    <span class=" fa fa-angle-down"></span>
-                  </a>
-                  <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="admin/login"><i class="fa fa-sign-out pull-right"></i> Masuk</a></li> 
-                    
-                </li>
-              </ul>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        </header>
-        <div class="wrapper">
-        <div class="container">
-          <div class="row">
-            <div class="banner-info text-center wow fadeIn delay-05s">
-              <h2 class="bnr-sub-title"></h2>
-              <div class="logo">
-                <img src="img/kejaksaanok.png" alt="" />
+  <body class="login">
+    <div>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form action="proses_login.php" id="login" name="login" method="post">
+              <h1>Login Admin</h1>
+              <div class="form-group has-feedback">
+                <input type="text" id="username" name="username_admin" class="form-control" autocomplete="off" maxlength="50" placeholder="Username" required="username" />
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
               </div>
-              <h3 class="bnr-sub-title">E-REGISTER </h3>
-                <h3 class="bnr-sub-title"><span class="logo-dec">BAGIAN ORGANISASI DAN TATA LAKSANA</span></h3>
-            </div>
-          </div>
-        </div>
+              <div class="form-group has-feedback">
+                <input type="password" id="password" name="password" class="form-control" autocomplete="off" maxlength="50" placeholder="Password" required="password" />
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+              </div>
+              <div>
+                <a href="../../index.php"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span> Kembali</button></a>
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-lock"></span> Masuk</button>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <div>
+                  <h2><i class="fa fa-institution"></i> KEJAKSAAN AGUNG</h2>
+                  <p>©2017 Bagian Organisasi dan Tata Laksana</p>
+                </div>
+              </div>
+            </form>
+          </section>
         </div>
       </div>
     </div>
-    <!--/ HEADER-->
-    <!---->
-    <section id="feature" class="section-padding wow fadeIn delay-05s">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h2 class="service-title pad-bt15">Tentang</h2>
-            <p class="sub-title pad-bt15">Website ini berguna untuk pengarsipan Surat Masuk dan Surat Keluar </p>
-            <p class="sub-title pad-bt15">di Bagian Organisasi dan Tata Laksana pada Biro Perencanaan</p>
-            <hr class="bottom-line">
-            <p class="sub-title pad-bt15">Pengarsipan Surat itu<strong> PENTING</strong></p>
-            <hr class="bottom-line">
-          </div>
-        <div class="col-md-4">
-        </div>
-          <div class="col-md-2 col-sm-6 col-xs-12">
-            <div class="wrap-item text-center">
-              <div class="item-img">
-                <img src="img/inbox.png">
-              </div>
-              <h3 class="pad-bt15">Surat Masuk</h3>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6 col-xs-12">
-            <div class="wrap-item text-center">
-              <div class="item-img">
-                <img src="img/outbox.png">
-              </div>
-              <h3 class="pad-bt15">Surat Keluar</h3>
-            </div>
-          </div>
-        <div class="col-md-4">
-        </div>
-        </div>
-      </div>
-    </section>
-    <!---->
-    <!---->
-    
-    <!---->
- 
-    <!---->
-    <footer id="footer">
-      <div class="container">
-        <div class="row text-center">
-          <p>&copy; Bagian Organisasi dan Tata Laksana. All Rights Reserved.</p>
-          <div class="credits">
-            <!-- 
-                All the links in the footer should remain intact. 
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Baker
-            -->
-            Designed  by <a href="https://bootstrapmade.com/">Bootstrap Themes</a>
-        </div>
-        </div>
-      </div>
-    </footer>
-    <!---->
-  </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/jquery.bxslider.min.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="contactform/contactform.js"></script>
-    
   </body>
 </html>
